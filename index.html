@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#102c29">
+  <meta name="application-name" content="祥云球场记分板">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
   <title>祥云球场记分板</title>
   <link rel="stylesheet" href="style.css?v=2.1-court-first">
   <script src="scoring.js" defer></script>
   <script src="app.js?v=2.1" defer></script>
+  <script src="./pwa.js?v=2.2.0" defer></script>
 </head>
 <body>
   <main>
-    <header><span class="eyebrow">BADMINTON / DOUBLES · V2.1</span><h1>祥云球场记分板</h1><p>單局雙打 · 21 分制 · 30 分封頂</p></header>
+    <header><span class="eyebrow">BADMINTON / DOUBLES · V2.2</span><h1>祥云球场记分板</h1><p>單局雙打 · 21 分制 · 30 分封頂</p></header>
     <details class="player-settings" id="prematch-settings" open><summary>⚙️ 賽前設定</summary>
     <section class="setup" aria-label="開局設定"><span>先發球隊</span><div class="choices"><button id="first-a" aria-pressed="true">A 隊先發</button><button id="first-b" aria-pressed="false">B 隊先發</button></div><small id="setup-hint">第一球前可更改</small></section>
     <div class="opening"><label>首位發球球員<select id="opening-server"></select></label><label>首位接發球球員<select id="opening-receiver"></select></label></div>
@@ -37,6 +42,7 @@
     </section>
     <div class="actions"><button id="undo">↶ 撤銷上一球</button><button id="restart">重新開始</button></div>
     <p id="storage-status" class="save-note" role="status"></p>
+    <p id="pwa-status" class="save-note" role="status" aria-live="polite"></p>
     <footer>發球隊雙數分在右區，單數分在左區。<br>先得 21 分並領先兩分勝出；29 平後先得 30 分勝出。</footer>
   </main>
 </body>
