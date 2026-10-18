@@ -1,0 +1,94 @@
+:root{font-family:"Segoe UI","Microsoft JhengHei",sans-serif;color:#ecf5ef;background:#102c29;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#214a3e,transparent 65%);min-height:100vh}main{max-width:880px;margin:auto;padding:40px 24px 24px}.eyebrow{font-size:12px;letter-spacing:3px;color:#b9d994}h1{font-size:clamp(28px,5vw,42px);margin:10px 0}header p{color:#b4c9bf;margin:0 0 28px}.setup{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.choices{display:flex;gap:8px}button{font:inherit;font-weight:600;cursor:pointer;border:1px solid #607a6c;border-radius:12px;min-height:48px;padding:12px 20px;background:#234139;color:#ecf5ef;touch-action:manipulation}button[aria-pressed=true]{background:#d9f5ab;color:#173b2c;border-color:#d9f5ab}button:focus-visible{outline:3px solid #fff;outline-offset:4px}button:disabled{opacity:.45;cursor:default}button:not(:disabled):active{transform:translateY(2px)}small{color:#b4c9bf}.status{margin:22px 0 16px;padding:16px 20px;border-radius:12px;background:#ffffff0b;border:1px solid #ffffff15;font-size:18px;min-height:60px}.scoreboard{display:grid;grid-template-columns:1fr 1fr;gap:18px}.team{border:2px solid transparent;border-radius:24px;padding:24px;background:#eaf0e8;color:#163a2b;box-shadow:0 12px 30px #0002}.team-b{background:#dce9ee;color:#173c4b}.team.serving{border-color:#c6f480;box-shadow:0 0 0 3px #c6f48025}.team-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}h2{font-size:24px;margin:0}.badge{font-size:12px;font-weight:700;min-height:24px;padding:4px 8px;border-radius:20px}.serving .badge{background:#244b35;color:#e2fbc6}.score{font-size:clamp(84px,16vw,140px);font-weight:750;font-variant-numeric:tabular-nums;text-align:center;line-height:1.4;letter-spacing:-5px}.point{width:100%;min-height:80px;background:#24523c;border:0;font-size:25px;color:white}.team-b .point{background:#235367}.point span{display:block;font-size:12px;font-weight:400;opacity:.75;margin-top:4px}.actions{display:flex;gap:12px;margin-top:22px}.actions button{flex:1}.save-note{text-align:center;font-size:12px;color:#b4c9bf;min-height:18px}footer{text-align:center;line-height:1.8;color:#a6beb2;font-size:13px;margin-top:22px}@media(max-width:520px){main{padding:26px 14px}.scoreboard{gap:10px}.team{padding:18px 12px;border-radius:18px}.team-heading{flex-wrap:wrap}h2{font-size:21px}.setup{gap:10px}.setup>span{width:100%}.setup small{font-size:11px}.choices button{padding:10px 15px}.status{font-size:16px;padding:14px}.point{min-height:82px;font-size:22px}.actions button{padding:12px 8px}}@media(prefers-reduced-motion:no-preference){button{transition:background .15s,transform .1s}}
+:root{--court-line:#cce6cd80}.player-settings{margin:0 0 20px;padding:14px 16px;background:#ffffff09;border:1px solid #ffffff20;border-radius:12px}summary{cursor:pointer;min-height:28px}.name-grid,.opening{display:grid;grid-template-columns:1fr 1fr;gap:12px}.name-grid{margin-top:14px}.opening{margin-top:16px}label{display:flex;flex-direction:column;gap:6px;font-size:14px;color:#d4e5d9;min-width:0}input,select{font:inherit;font-size:16px;width:100%;min-height:48px;border:1px solid #6b8979;border-radius:10px;padding:10px;background:#203e35;color:#fff}input:focus-visible,select:focus-visible{outline:3px solid #d9f5ab;outline-offset:2px}.migration-note{font-size:14px;color:#f7dba3;line-height:1.6}.migration-note:empty{display:none}.court-panel{margin:16px 0 22px}.court-panel h2{font-size:18px}.court-panel p{font-size:12px;color:#b4c9bf;line-height:1.6}.court-map{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:2px solid var(--court-line);background:#24553f;border-radius:12px;overflow:hidden}.court-cell{padding:14px 10px;text-align:center;min-height:86px;border:1px solid var(--court-line);display:flex;flex-direction:column;justify-content:center;gap:8px}.court-cell span{font-size:12px;color:#c9e0ce}.court-cell strong{overflow-wrap:anywhere;border-radius:8px;padding:8px;font-size:16px}.net{grid-column:1/-1;text-align:center;border-top:2px dashed #d8e7d9;border-bottom:2px dashed #d8e7d9;background:#12372b;color:#cce6cd;font-size:12px;letter-spacing:10px;padding:5px}.active-server{background:#d9f5ab;color:#173b2c}.active-receiver{background:#d5ecfc;color:#173c4b}.status{overflow-wrap:anywhere}
+/* Compact phone layout only; desktop rules above remain unchanged. */
+@media (max-width: 520px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 18px;
+    gap: 0;
+  }
+  main > * { min-width: 0; }
+  header .eyebrow { font-size: 10px; letter-spacing: 2px; }
+  header h1 { font-size: 26px; margin: 4px 0; }
+  header p { font-size: 12px; margin: 0 0 10px; }
+  .player-settings { padding: 0 10px; margin-bottom: 10px; }
+  .player-settings summary {
+    min-height: 44px;
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  .player-settings[open] { padding-bottom: 10px; }
+  .name-grid { margin-top: 0; gap: 8px; }
+  .setup { gap: 6px 10px; }
+  .setup > span { width: auto; font-size: 13px; }
+  .choices { gap: 6px; }
+  .choices button { min-height: 44px; padding: 8px 12px; font-size: 13px; }
+  .setup small { width: 100%; line-height: 1.4; }
+  .opening { gap: 8px; margin-top: 8px; }
+  label { font-size: 12px; gap: 4px; }
+  input, select { min-width: 0; min-height: 44px; padding: 8px; }
+  .status {
+    margin: 10px 0 8px;
+    min-height: 48px;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .migration-note { margin: 8px 0 0; font-size: 12px; }
+  .scoreboard { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+  .team { min-width: 0; padding: 10px; border-radius: 16px; }
+  .team-heading { gap: 4px; }
+  .team-heading h2 { font-size: 18px; }
+  .badge { font-size: 10px; padding: 4px 6px; min-height: 22px; }
+  .score {
+    font-size: clamp(52px, 15vw, 64px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin: 4px 0 8px;
+  }
+  .point { min-height: 56px; padding: 8px; font-size: 20px; }
+  .point span { font-size: 11px; margin-top: 2px; }
+  .actions { gap: 8px; margin-top: 10px; }
+  .actions button { min-width: 0; min-height: 44px; padding: 10px 6px; font-size: 14px; }
+  /* Court stays compact; V2.1 order is declared below. */
+  .court-panel { order: 1; margin: 14px 0 0; }
+  .court-panel h2 { font-size: 16px; }
+  .court-panel p { font-size: 11px; line-height: 1.45; margin: 6px 0; }
+  .court-cell { min-height: 58px; padding: 5px 6px; gap: 3px; }
+  .court-cell span { font-size: 10px; }
+  .court-cell strong { font-size: 13px; line-height: 1.35; padding: 4px; }
+  .net { font-size: 10px; padding: 2px; }
+  .save-note { order: 2; margin: 10px 0 0; font-size: 11px; line-height: 1.5; }
+  footer { order: 3; margin-top: 10px; font-size: 11px; }
+}
+
+/* V2.1: all opening controls share one collapsible panel. */
+.player-settings .setup { margin-top: 12px; }
+.confirm-setup { margin-top: 14px; width: 100%; background: #d9f5ab; color: #173b2c; }
+@media (max-width: 520px) {
+  main { padding: 10px 12px max(12px, env(safe-area-inset-bottom)); }
+  header { order: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  header h1 { font-size: 20px; margin: 0; }
+  header .eyebrow { font-size: 9px; letter-spacing: 0; order: 1; }
+  header p { display: none; }
+  .status { order: 1; margin: 8px 0; padding: 8px 10px; font-size: 14px; }
+  .scoreboard { order: 3; }
+  .point { min-height: 60px; }
+  .court-panel { order: 2; margin: 0 0 10px; }
+  .court-panel h2 { display: none; }
+  .court-panel > p { display: none; }
+  .court-map { margin: 0; }
+  .court-cell { min-height: 58px; }
+  .court-cell strong { font-size: 14px; }
+  .actions { order: 4; margin-top: 8px; }
+  .player-settings { order: 5; margin: 10px 0 0; }
+  /* Before play, show the open panel near the top for easy setup. */
+  .player-settings[open] { order: 1; margin: 8px 0; }
+  .player-settings .setup { margin-top: 0; }
+  .player-settings .name-grid { margin-top: 10px; }
+  .migration-note { order: 6; }
+  .save-note { order: 7; }
+  footer { order: 8; }
+  .court-cell, .team, .player-settings, .status { overflow-wrap: anywhere; }
+}

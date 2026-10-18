@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c29">
+  <title>祥云球场记分板</title>
+  <link rel="stylesheet" href="style.css?v=2.1-court-first">
+  <script src="scoring.js" defer></script>
+  <script src="app.js?v=2.1" defer></script>
+</head>
+<body>
+  <main>
+    <header><span class="eyebrow">BADMINTON / DOUBLES · V2.1</span><h1>祥云球场记分板</h1><p>單局雙打 · 21 分制 · 30 分封頂</p></header>
+    <details class="player-settings" id="prematch-settings" open><summary>⚙️ 賽前設定</summary>
+    <section class="setup" aria-label="開局設定"><span>先發球隊</span><div class="choices"><button id="first-a" aria-pressed="true">A 隊先發</button><button id="first-b" aria-pressed="false">B 隊先發</button></div><small id="setup-hint">第一球前可更改</small></section>
+    <div class="opening"><label>首位發球球員<select id="opening-server"></select></label><label>首位接發球球員<select id="opening-receiver"></select></label></div>
+    <div class="name-grid">
+      <label>A1<input id="name-A1" maxlength="24" autocomplete="off"></label><label>A2<input id="name-A2" maxlength="24" autocomplete="off"></label>
+      <label>B1<input id="name-B1" maxlength="24" autocomplete="off"></label><label>B2<input id="name-B2" maxlength="24" autocomplete="off"></label>
+    </div><button id="confirm-setup" class="confirm-setup" type="button">確認設定，返回記分</button></details>
+    <p id="migration-note" class="migration-note" role="status"></p>
+    <section id="status" class="status" role="status" aria-live="polite"></section>
+    <section class="court-panel" aria-label="四位球員發球區站位">
+      <h2>發球區站位</h2><p>左右以各隊面向球網為準；上方 B 隊的左右在畫面中相反。</p>
+      <div class="court-map">
+        <div class="court-cell"><span>B 隊 · 右區</span><strong id="position-b-right"></strong></div>
+        <div class="court-cell"><span>B 隊 · 左區</span><strong id="position-b-left"></strong></div>
+        <div class="net">球 網</div>
+        <div class="court-cell"><span>A 隊 · 左區</span><strong id="position-a-left"></strong></div>
+        <div class="court-cell"><span>A 隊 · 右區</span><strong id="position-a-right"></strong></div>
+      </div><p>顯示發球輪次所屬區域；回合中可自由走位。非發球／接發球的隊友不必實際站在圖示位置。</p>
+    </section>
+    <section class="scoreboard" aria-label="雙方比分">
+      <article class="team team-a" id="card-a"><div class="team-heading"><h2>A 隊</h2><span id="badge-a" class="badge"></span></div><div id="score-a" class="score">0</div><button class="point" id="point-a" aria-label="A 隊得一分">＋ 得分<span>A 隊</span></button></article>
+      <article class="team team-b" id="card-b"><div class="team-heading"><h2>B 隊</h2><span id="badge-b" class="badge"></span></div><div id="score-b" class="score">0</div><button class="point" id="point-b" aria-label="B 隊得一分">＋ 得分<span>B 隊</span></button></article>
+    </section>
+    <div class="actions"><button id="undo">↶ 撤銷上一球</button><button id="restart">重新開始</button></div>
+    <p id="storage-status" class="save-note" role="status"></p>
+    <footer>發球隊雙數分在右區，單數分在左區。<br>先得 21 分並領先兩分勝出；29 平後先得 30 分勝出。</footer>
+  </main>
+</body>
+</html>
